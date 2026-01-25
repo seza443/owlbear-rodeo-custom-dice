@@ -26,7 +26,7 @@ export function InteractiveTray() {
     <Box
       component="div"
       borderRadius={1}
-      height="100vh"
+      height="90vh"
       width="calc(100vh / 2)"
       overflow="hidden"
       position="relative"

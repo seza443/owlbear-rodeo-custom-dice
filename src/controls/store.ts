@@ -22,6 +22,7 @@ interface DiceControlsState {
   changeDiceSet: (diceSet: DiceSet) => void;
   resetDiceCounts: () => void;
   changeDieCount: (id: string, count: number) => void;
+  setDiceCount: (diceCounts: DiceCounts) => void;
   incrementDieCount: (id: string) => void;
   decrementDieCount: (id: string) => void;
   setDiceAdvantage: (advantage: Advantage) => void;
@@ -77,6 +78,11 @@ export const useDiceControlsStore = create<DiceControlsState>()(
         if (id in state.diceCounts) {
           state.diceCounts[id] = count;
         }
+      });
+    },
+    setDiceCount(diceCounts) {
+      set((state) => {
+        state.diceCounts = diceCounts;
       });
     },
     incrementDieCount(id) {
