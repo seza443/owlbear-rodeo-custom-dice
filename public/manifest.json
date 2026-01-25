@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "manifest_version": 1,
   "author": "seza443",
-  "homepage_url": "https://github.com/seza443/owlbear-rodeo-custom-dice",
+  "homepage_url": "https://owlbear-rodeo-custom-dice.onrender.com",
   "icon": "/logo.png",
   "description": "Beautiful 3D dice extension for d20 based systems",
   "action": {
