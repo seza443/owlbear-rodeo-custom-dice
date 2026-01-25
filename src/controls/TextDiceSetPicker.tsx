@@ -22,7 +22,6 @@ export function TextDiceSetPicker() {
   const setDiceAdvantage = useDiceControlsStore((state) => state.setDiceAdvantage);
   const setDiceCount = useDiceControlsStore((state) => state.setDiceCount);
   const resetDiceCounts = useDiceControlsStore((state) => state.resetDiceCounts);
-  const rollPressTime = useDiceControlsStore((state) => state.diceRollPressTime);
   const setRollPressTime = useDiceControlsStore((state) => state.setDiceRollPressTime);
   const startRoll = useDiceRollStore((state) => state.startRoll);
   const pushRecentRoll = useDiceHistoryStore((state) => state.pushRecentRoll);
@@ -31,10 +30,10 @@ export function TextDiceSetPicker() {
 
   useEffect(() => {
     if (document.activeElement !== inputRef.current && inputRef.current) {
-      const newText = diceCountsToText(diceCounts, diceBonus);
+      const newText = diceCountsToText(diceCounts, diceBonus, diceAdvantage);
       setText(newText);
     }
-  }, [diceCounts, diceBonus]);
+  }, [diceCounts, diceBonus, diceAdvantage]);
 
   function mapToDiceSet(diceCounts: DiceCounts): DiceCounts {
     const diceSetCounts: DiceCounts = {};
@@ -57,9 +56,10 @@ export function TextDiceSetPicker() {
 
   function onTextChange(text: string) {
     setText(text);
-    const { dice, mod } = textToDiceCounts(text);
+    const { dice, mod, advantage } = textToDiceCounts(text);
     setDiceCount(mapToDiceSet(dice));
     setDiceBonus(mod);
+    setDiceAdvantage(advantage);
   }
 
   function handleReset() {
