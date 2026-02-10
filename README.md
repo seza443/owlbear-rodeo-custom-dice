@@ -6,7 +6,7 @@ Beautiful 3D dice extension for d20 based systems
 
 ## Installing
 
-The extension can be installed from <https://owlbear-rodeo-custom-dice.onrender.com/manifest.json/>.
+The extension can be installed from <https://owlbear-rodeo-custom-dice.onrender.com/manifest.json>.
 
 ## How it Works
 
